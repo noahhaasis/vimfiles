@@ -6,6 +6,11 @@ set backspace=eol,indent,start
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 
+" vim-plug
+call plug#begin('~/vimfiles/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+call plug#end()
+
 
 " use indentation of previous line
 set autoindent
@@ -84,6 +89,8 @@ nmap <leader>sj   :rightbelow new<CR>
 nnoremap <leader>w <C-w>
 
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" NERDTree
 
 " ctag
 nnoremap <leader>td <C-]> 
