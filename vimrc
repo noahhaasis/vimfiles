@@ -9,6 +9,7 @@ set nocompatible
 " vim-plug
 call plug#begin('~/vimfiles/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 
@@ -42,7 +43,6 @@ set showmode
 set showcmd
 set hidden
 set wildmenu
-set cursorline
 set ttyfast
 set ruler
 set laststatus=2
@@ -70,7 +70,8 @@ vnoremap <down> <nop>
 vnoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-
+" Map jj to esc and don't move a character back after mode transition
+inoremap jj <Esc>`^
 noremap H ^
 noremap L $
 vnoremap L g_
@@ -91,6 +92,9 @@ nnoremap <leader>w <C-w>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " NERDTree
+nnoremap <leader>n :NERDTreeToggle<CR>
+" Tagbar
+nnoremap <leader>tb :TagbarToggle<CR>
 
 " ctag
 nnoremap <leader>td <C-]> 
